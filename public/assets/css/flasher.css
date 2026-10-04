@@ -1,0 +1,104 @@
+.flash-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100000;
+    min-width: 300px;
+    max-width: 450px;
+    /* Prevents container from overflowing the viewport if many messages exist */
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    /* Optional: hide scrollbars while keeping scrollability */
+    scrollbar-width: none; /* Firefox */
+}
+
+.flash-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.flash-message {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.3s ease-out;
+    position: relative;
+    color: #fff;
+    
+    /* 1. Set explicit max-height for collapse animation */
+    max-height: 150px;
+    
+    /* 2. Transition opacity, height, margins, and padding together */
+    transition: 
+        opacity 0.4s ease-out,
+        max-height 0.4s ease-out,
+        margin-bottom 0.4s ease-out,
+        padding 0.4s ease-out;
+    
+    /* Prevent text overflow during the height collapse */
+    overflow: hidden; 
+}
+
+/* Added helper class to trigger the removal animation */
+.flash-message.hide {
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Flash Types Colors */
+.flash-success {
+    background-color: #28a745;
+    border-left: 5px solid #1e7e34;
+}
+
+.flash-info {
+    background-color: #17a2b8;
+    border-left: 5px solid #117a8b;
+}
+
+.flash-warning {
+    background-color: #ffc107;
+    border-left: 5px solid #d39e00;
+    color: #333;
+}
+
+.flash-error {
+    background-color: #dc3545;
+    border-left: 5px solid #bd2130;
+}
+
+.flash-icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.flash-body {
+    flex: 1;
+}
+
+.flash-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.flash-text {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.flash-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 10px;
+    line-height: 1;
+}

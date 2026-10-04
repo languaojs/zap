@@ -1,0 +1,18 @@
+<?php
+
+use Zap\Core\Db\Database;
+
+return new class {
+
+    protected string $table = '{{table}}';
+
+    public function up(Database $db): void
+    {
+        $db->schema()->dropColumn($this->table, '{{column}}');
+    }
+
+    public function down(Database $db): void
+    {
+        $db->schema()->addColumn($this->table, '{{column}}', 'VARCHAR(255)');
+    }
+};

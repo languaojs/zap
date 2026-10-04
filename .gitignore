@@ -1,0 +1,11 @@
+node_modules/
+vendor/
+.env
+storage/cache/views/
+storage/database/
+storage/logs/
+storage/sessions/
+storage/uploads/images
+composer.lock
+package-lock.json
+config/setup.php

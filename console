@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+
+<?php
+
+require 'public/constants.php';
+require BASE_PATH.'/vendor/autoload.php';
+
+use Zap\CLI\Kernel;
+use Zap\CLI\Commands\MakeController;
+use Zap\CLI\Commands\MakeModel;
+use Zap\CLI\Commands\MakeMigration;
+use Zap\CLI\Commands\MigrationStart;
+use Zap\CLI\Commands\MigrationRollback;
+use Zap\CLI\Commands\MigrationStatus;
+use Zap\CLI\Commands\MigrationFresh;
+use Zap\CLI\Commands\Generator;
+use Zap\CLI\Commands\MakeDatabase;
+use Zap\CLI\Commands\Clear;
+use Zap\CLI\Commands\CacheRoutes;
+
+$kernel = new Kernel();
+$kernel->register_command(new MakeDatabase());
+$kernel->register_command(new MakeController());
+$kernel->register_command(new MakeModel());
+$kernel->register_command(new MakeMigration());
+$kernel->register_command(new MigrationStart());
+$kernel->register_command(new MigrationRollback());
+$kernel->register_command(new MigrationStatus());
+$kernel->register_command(new MigrationFresh());
+$kernel->register_command(new Generator());
+$kernel->register_command(new Clear());
+$kernel->register_command(new CacheRoutes);
+$kernel->handle($argv);

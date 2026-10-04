@@ -1,0 +1,23 @@
+<?php
+
+use Zap\Core\Db\Database;
+
+return new class {
+
+    protected string $table = '{{table}}';
+
+    public function up(Database $db): void
+    {
+        $db->schema()->drop($this->table);
+    }
+
+    public function down(Database $db): void
+    {
+        // recreate manually if needed
+        $db->schema()->create($this->table, function ($table) {
+
+            $table->id();
+
+        });
+    }
+};

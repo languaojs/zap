@@ -1,0 +1,12 @@
+<?php
+
+namespace Zap\App\Controllers;
+
+use Zap\Core\Base\BaseController;
+
+class {{ClassName}} extends BaseController {
+
+    public function index() {
+        //Your code here...
+    }
+}

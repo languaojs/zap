@@ -1,0 +1,24 @@
+<?php
+
+use Zap\Core\Db\Database;
+use Zap\Core\Db\Blueprint;
+
+return new class {
+
+    protected string $table = '{{table}}';
+
+    public function up(Database $db): void
+    {
+        $db->schema()->table($this->table, function (Blueprint $table) {
+
+            // add new columns
+            $table->string('{{column}}');
+
+        });
+    }
+
+    public function down(Database $db): void
+    {
+        $db->schema()->dropColumn($this->table, '{{column}}');
+    }
+};

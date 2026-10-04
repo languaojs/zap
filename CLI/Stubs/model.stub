@@ -1,0 +1,13 @@
+<?php 
+namespace Zap\App\Models;
+
+use Zap\Core\Base\BaseModel;
+
+class {{ClassName}} extends BaseModel {
+
+    protected string $table = '{{table}}';
+
+    //QueryBuilder: use $this->builder
+    //Database: use $db = $this->db() in the method
+    
+}

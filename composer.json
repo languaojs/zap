@@ -1,0 +1,32 @@
+{
+    "name": "languaojs/zap",
+    "description": "A mini, lightweight, secure PHP framework",
+    "type": "project",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Zainurrahman",
+            "email": "languaojs@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Zap\\App\\": "app/",
+            "Zap\\Core\\": "core/",
+            "Zap\\CLI\\": "CLI"
+        },
+        "files":[
+            "helpers/functions.php",
+            "bootstrap/boot.php",
+            "bootstrap/bindings.php"
+        ]
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "eftec/bladeone": "^4.19",
+        "phpmailer/phpmailer": "^7.1",
+        "psr/container": "^2.0",
+        "php": "^8.0"
+    }
+}

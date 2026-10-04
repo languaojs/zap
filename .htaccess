@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    Options -Indexes
+
+    # SECURITY: Block access to .env and other hidden files
+    RewriteCond %{REQUEST_URI} !^/\.well-known/
+    RewriteRule ^\.(.*)$ - [F,L]
+
+    # Allow frontend assets to be served directly
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^frontend/ - [L]
+
+    # Existing logic: Redirect everything to public folder
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
