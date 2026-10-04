@@ -6,22 +6,25 @@ Zap PHP is a lightweight PHP framework for building web applications. It include
 
 ## Requirements
 
-- PHP 8.1 or later
+- PHP 8.0 or later
 - Composer
 - A PDO driver for the database you use (MySQL or SQLite)
 - Node.js and npm are optional, for frontend assets built with Vite
 
 ## Getting started
 
-Clone or download the project, then install its PHP dependencies:
+Create a new project with Composer:
 
 ```sh
-composer install
+composer create-project languaojs/zap
 ```
 
-Copy the example environment file:
+This package name must match the name published on Packagist and declared in `composer.json`.
+
+Then enter the project directory and configure your environment. If `.env` was not created automatically, copy the example file:
 
 ```sh
+cd zap
 cp .env.example .env
 ```
 
